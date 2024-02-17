@@ -1,4 +1,7 @@
-# GLIGEN GUI
+# GLIGEN GUI - 768px Support + Easy Launch
+
+- Changed latent + generation to 512px x 768px
+- Easy run bat file for launching the app
 
 [GLIGEN](https://gligen.github.io/) is a novel way to specify the precise location of objects in text-to-image models. I present here an intuitive GUI that makes it significantly easier to use GLIGEN with ComfyUI.
 
