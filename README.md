@@ -4,7 +4,7 @@
 ![alt text](https://raw.githubusercontent.com/Acephalia/gligen-gui-768/main/Gilgen-768.JPG)
 
 
-- Warning: You may get unexpected reuslts (mainly prompt bleed) as the Gligen model is only trained at 512x512, from my tests it was still pretty usable and the outputs at 512 from some models were just a little sad, so its a bit of a give and take till someone trains a new model.
+- Warning: You may get unexpected reuslts (mainly prompt bleed and cloning) as the Gligen model is only trained at 512x512, from my tests it was still pretty usable with simple compositions and the outputs at 512 from some models were just a little sad, so its a bit of a give and take till someone trains a new model.
 - Changed latent + generation to 512px x 768px (quick and dirty)
 - Easy run.bat file for launching the app
 - Amazing original implementation by @mut-ex
