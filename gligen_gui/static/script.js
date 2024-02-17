@@ -392,7 +392,7 @@ function buildPrompt() {
 
   idx += 1;
   let latentID = idx;
-  prompt[String(latentID)] = nodeEmptyLatentImage(512, 768, 1);
+  prompt[String(latentID)] = nodeEmptyLatentImage(512, 768, 1); //change res
 
   idx += 1;
   let ksamplerID = idx;
@@ -777,7 +777,7 @@ function setCanvasSize(val) {
     let c = document.getElementById(canvas_name);
     let ctx = c.getContext('2d');
     c.width = val;
-    c.height = 768; //fixed 768 size
+    c.height = 768; ////change res
     ctx.font = `bold ${22 * (val / 512)}px courier`;
     ctx.lineWidth = 4 * (val / 512);
   });
@@ -1055,7 +1055,7 @@ function drawBox(box, canvas_id) {
 function clearCanvas(canvas_id) {
   let canvas = document.getElementById(canvas_id);
   let ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, 512, 768);  //768 size addon
+  ctx.clearRect(0, 0, 512, 768);  //change res
 }
 
 // Handles the mouse movement and clicking events for drawing the rectangles
@@ -1249,7 +1249,7 @@ function downloadImage() {
   const ctx_main = canvas_main.getContext('2d');
   const ctx_final = canvas_final.getContext('2d');
   canvas_final.width = 512;
-  canvas_final.height = 768;  //768 size addon
+  canvas_final.height = 768;  //change res
   ctx_final.drawImage(canvas_image, 0, 0);
   ctx_final.drawImage(canvas_main, 0, 0);
   const image = canvas_final.toDataURL('image/png');
