@@ -1,7 +1,7 @@
-# GLIGEN GUI - 768px Support + Easy Launch
+# GLIGEN GUI - 768px Support 
 
 - Changed latent + generation to 512px x 768px (quick and dirty)
-- Easy run bat file for launching the app
+- Easy run.bat file for launching the app
 - Amazing original implementation by @mut-ex
 
 ###To do(maybe)###
