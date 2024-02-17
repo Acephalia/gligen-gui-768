@@ -7,7 +7,7 @@
 ### To do(maybe) ###
 - Allow user to input resolution. 
 
-###How to manually change resolution###
+### How to manually change resolution ###
 For now the code is commented where the resolution change has been made so you can manually change the fixed resolution. Search for : `change res` and change all instances within the below files. The GUI canvas might be a bit trickier.
 - gligen-gui\gligen_gui\templates\base.html
 - gligen-gui\gligen_gui\static\script.js
