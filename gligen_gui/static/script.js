@@ -392,7 +392,7 @@ function buildPrompt() {
 
   idx += 1;
   let latentID = idx;
-  prompt[String(latentID)] = nodeEmptyLatentImage(512, 512, 1);
+  prompt[String(latentID)] = nodeEmptyLatentImage(512, 768, 1);
 
   idx += 1;
   let ksamplerID = idx;
@@ -777,7 +777,7 @@ function setCanvasSize(val) {
     let c = document.getElementById(canvas_name);
     let ctx = c.getContext('2d');
     c.width = val;
-    c.height = val;
+    c.height = 768; //fixed 768 size
     ctx.font = `bold ${22 * (val / 512)}px courier`;
     ctx.lineWidth = 4 * (val / 512);
   });
@@ -793,7 +793,7 @@ function setCanvasSize(val) {
   //   let row = document.getElementById(`row-${id}`)
   //   row.childNodes[2].innerHTML = rectangle.x
   //   row.childNodes[3].innerHTML = rectangle.y
-  //   row.childNodes[4].innerHTML = `${rectangle.width} × ${rectangle.height}`
+  //   row.childNodes[4].innerHTML = `${rectangle.width} Ã— ${rectangle.height}`
   // })
   // state.canvas_size = val
   // saveRectangles()
@@ -874,7 +874,7 @@ function addTableRow(box, box_id, map) {
   prompt_input.id = 'input-' + box_id;
   prompt_input.setAttribute('type', 'text');
   prompt_input.value = box.prompt;
-  prompt_input.placeholder = `${box.width} × ${box.height}`;
+  prompt_input.placeholder = `${box.width} Ã— ${box.height}`;
   col_prompt_input.appendChild(prompt_input);
   new_row.appendChild(col_prompt_input);
 
@@ -896,7 +896,7 @@ function addTableRow(box, box_id, map) {
   // Create a column for the box's width and height
   let col_dims = document.createElement('div');
   col_dims.classList.add('col-numbers');
-  col_dims.innerHTML = `${box.width}<span style="opacity:0.5;">&nbsp;×&nbsp;</span>${box.height}`;
+  col_dims.innerHTML = `${box.width}<span style="opacity:0.5;">&nbsp;Ã—&nbsp;</span>${box.height}`;
   new_row.appendChild(col_dims);
 
   // Create a column for the delete box button
@@ -1033,7 +1033,7 @@ function drawBox(box, canvas_id) {
   if (!box.prompt) {
     drawTextCenter(
       ctx,
-      `${Math.abs(box.width)}×${Math.abs(box.height)}`,
+      `${Math.abs(box.width)}Ã—${Math.abs(box.height)}`,
       box.x,
       box.y,
       box.width,
@@ -1055,7 +1055,7 @@ function drawBox(box, canvas_id) {
 function clearCanvas(canvas_id) {
   let canvas = document.getElementById(canvas_id);
   let ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, 512, 512);
+  ctx.clearRect(0, 0, 512, 768);  //768 size addon
 }
 
 // Handles the mouse movement and clicking events for drawing the rectangles
@@ -1175,7 +1175,7 @@ function addToast(header, body, is_error = false, timeout = 5000) {
 
   let toast_close_button = document.createElement('button');
   toast_close_button.classList.add('toast-close-button');
-  toast_close_button.innerHTML = '🗙';
+  toast_close_button.innerHTML = 'ðŸ—™';
   toast_close_button.addEventListener('click', (event) => {
     // new_toast.classList.add('toast-leave-animation');
     new_toast.style.marginBottom = `-${new_toast.offsetHeight + 12}px`;
@@ -1249,7 +1249,7 @@ function downloadImage() {
   const ctx_main = canvas_main.getContext('2d');
   const ctx_final = canvas_final.getContext('2d');
   canvas_final.width = 512;
-  canvas_final.height = 512;
+  canvas_final.height = 768;  //768 size addon
   ctx_final.drawImage(canvas_image, 0, 0);
   ctx_final.drawImage(canvas_main, 0, 0);
   const image = canvas_final.toDataURL('image/png');
