@@ -4,7 +4,7 @@
 - Easy run.bat file for launching the app
 - Amazing original implementation by @mut-ex
 
-###To do(maybe)###
+### To do(maybe) ###
 - Allow user to input resolution. 
 
 ###How to manually change resolution###
