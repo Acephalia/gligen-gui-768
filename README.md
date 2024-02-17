@@ -1,5 +1,6 @@
 # GLIGEN GUI - 768px Support 
 
+- Warning: You may get unexpected reuslts as the Gligen model is only trained at 512x512, from my tests it was still pretty usable and the outputs at 512 from some models were just a little sad, so its a bit of a give and take till someone trains a new model.
 - Changed latent + generation to 512px x 768px (quick and dirty)
 - Easy run.bat file for launching the app
 - Amazing original implementation by @mut-ex
