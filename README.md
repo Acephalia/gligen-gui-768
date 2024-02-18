@@ -1,3 +1,5 @@
+CLOSED. canvas sizing now integrated into main repo : https://github.com/mut-ex/gligen-gui 
+
 # GLIGEN GUI - 768px Support 
 
 
